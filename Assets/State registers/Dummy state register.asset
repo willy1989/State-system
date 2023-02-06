@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecea6faa1838fbc46ba8cf75134b16f9, type: 3}
-  m_Name: Message printer State register
+  m_Name: Dummy state register
   m_EditorClassIdentifier: 
   states:
-  - welcome
-  - update
-  - goodbye
+  - a
+  - b
+  - c

@@ -1,25 +1,49 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "State register", menuName = "ScriptableObjects/StateRegister", order = 1)]
+[CreateAssetMenu(fileName = "State register", menuName = "ScriptableObjects/State register", order = 1)]
 public class StateRegister : ScriptableObject
 {
     [SerializeField] private string[] states;
 
-    public string[] States => states;
-
-
-    public bool IsStateInRegister(string state)
+    private void OnValidate()
     {
-        foreach (string item in states)
+        for(int i = 0; i < states.Length; i++)
         {
-            if (state == item)
+            states[i] = states[i].StateStringCleanUp();
+        }
+    }
+
+    public bool TryGetState(string matchingState, out string state)
+    {
+        matchingState = matchingState.StateStringCleanUp();
+
+        state = string.Empty;
+
+        foreach (string item in states) 
+        { 
+            if(item == matchingState)
+            {
+                state = matchingState;
                 return true;
+            }
         }
 
-        throw new ArgumentException("The state : " + "'" + state + "'" + " you input doesn't exist in the register: " 
-                                    + this.name +" Please check the spelling again.");
+        return false;
+    }
+}
+
+public class InvalidStateException : Exception
+{
+    public InvalidStateException(string stateName) : base(message: "The state : " + "'" + stateName + "'" + " you input doesn't exist in the register. " +
+                                                                   " Please check the spelling again.")
+    {
+    }
+}
+
+public class EmptyStateException : Exception
+{
+    public EmptyStateException() : base(message: "The state name can't be empty. Please type in a name. ")
+    {
     }
 }

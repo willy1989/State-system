@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &690022604
+--- !u!1 &45029338
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,36 +131,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 690022606}
-  - component: {fileID: 690022605}
-  - component: {fileID: 690022607}
+  - component: {fileID: 45029340}
+  - component: {fileID: 45029339}
   m_Layer: 0
-  m_Name: Message printer
+  m_Name: Dummy state holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &690022605
+--- !u!114 &45029339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690022604}
+  m_GameObject: {fileID: 45029338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934926a96c71c9b46934865e47cc174d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dac71c84d4079841b36fea8e79c5ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateSystem: {fileID: 690022607}
---- !u!4 &690022606
+  startState: A
+  stateRegister: {fileID: 11400000, guid: a5e90cb09aac6d049a6077f684544b90, type: 2}
+--- !u!4 &45029340
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690022604}
+  m_GameObject: {fileID: 45029338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -169,20 +169,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &690022607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690022604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd89f0d56716ed449e828f9456ebfe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: welcome
-  stateRegister: {fileID: 11400000, guid: f380ac20958bcbe46980777335e842f1, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
